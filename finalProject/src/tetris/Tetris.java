@@ -47,24 +47,8 @@ public class Tetris extends javax.swing.JFrame {
         baja = new TimerTask() {
             @Override
             public void run() {
-                /*if (!clip.isActive()) try {
-                    //audio2 = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/tetris/tetris.wav"));
-                    clip = AudioSystem.getClip();
-                    clip.open(audio2);
-                    clip.start();
-
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }*/
-                
-                //clip.start();
-                
-                //verificador.rellenar(matrix);
+                clip.start();
                 verificador.verificar(matrix, paso);
-                /*contador = verificador.perder(contador, matrix, paso);
-                verificador.estaCompleto(matrix);
-                contador = verificador.generarFigura(contador, figura, matrix);
-                verificador.rellenar(matrix);*/
 
             }
         };
@@ -194,12 +178,12 @@ public class Tetris extends javax.swing.JFrame {
             @Override
             public void run() {
                 contador = verificador.perder(contador, matrix, paso);
-                System.out.println("DESPUES");
-                System.out.println(contador);
+                //System.out.println("DESPUES");
+                //System.out.println(contador);
                 verificador.estaCompleto(matrix);
-                System.out.println("pasa");
+                //System.out.println("pasa");
                 verificador.generarFigura(contador, figura, matrix);
-                System.out.println("Esta bajando");
+                //System.out.println("Esta bajando");
                 verificador.rellenar(matrix);
                 /*for (int x = 0; x < dimx; x++) {
                     if (!matrix[x][0].getBackground().equals(new Color(240, 240, 240))) {
