@@ -15,7 +15,8 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 
 public class Tetris extends javax.swing.JFrame {
-
+    
+    Tablero nuevoTablero;
     JButton[][] matrixes;
     Figura figura;
     Timer paso;
@@ -34,7 +35,7 @@ public class Tetris extends javax.swing.JFrame {
     public Tetris() {
         initComponents();
  
-        Tablero nuevoTablero = new Tablero(matrixes, Tablero, 10, 20);
+        nuevoTablero = new Tablero(matrixes, Tablero, 10, 20);
         JButton[][] matrix = nuevoTablero.dibujar();
         
         verificador = new Verificador(figura, contador);
